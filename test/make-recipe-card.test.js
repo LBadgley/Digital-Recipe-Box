@@ -1,7 +1,9 @@
+import meal from '../data/meal.js';
+
 const test = QUnit.test;
 QUnit.module('recipe card template');
 
-function makeRecipeCard() {
+function makeRecipeCard(meal) {
     const html = /*html*/`
         <li>
             <p>Chicken Couscous</p>
@@ -23,7 +25,7 @@ test('make recipe card', assert => {
             <p>Meal Id: 52850</p>
         </li>`;
     //act
-    const result = makeRecipeCard();
+    const result = makeRecipeCard(meal);
     //assert
     assert.htmlEqual(result, expected);
 
