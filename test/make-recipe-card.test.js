@@ -6,11 +6,12 @@ QUnit.module('recipe card template');
 function makeRecipeCard(meal) {
     const html = /*html*/`
         <li>
-            <p>Chicken Couscous</p>
-            <img src="https://www.themealdb.com/images/media/meals/qxytrx1511304021.jpg" alt="image of Chicken Couscous">
-            <p>Meal Id: 52850</p>
+            <p><a href=${meal.strSource}>${meal.strMeal}</a></p>
+            <img src=${meal.strMealThumb} alt="image of ${meal.strMeal}">
+            <p>Cuisine: ${meal.strArea}</p>
+            <p><a href=${meal.strYoutube} target="_blank">Video</a></p>
         </li>
-        `;   
+    `;   
     const template = document.createElement('template');
     template.innerHTML = html;
     return template.content;
@@ -25,7 +26,7 @@ test('make recipe card', assert => {
             <p>Cuisine: Moroccan</p>
             <p><a href="https://www.youtube.com/watch?v=GZQGy9oscVk" target="_blank">Video</a></p>
         </li>
-        `;
+    `;
     //act
     const result = makeRecipeCard(meal);
     //assert
