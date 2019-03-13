@@ -1,7 +1,7 @@
 API with User Data
 ===
 
-Build a searchable, pageable explorer for an API of your choice, that authenticates a user, stores favorite data, and displays that user's favorites.
+Build a searchable, pageable explorer for an API of your choice, that authenticates a user, allows user to select favorites, stores favorite data, and displays user favorites.
 
 ## Process Requirements
 
