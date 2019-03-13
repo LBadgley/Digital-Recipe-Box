@@ -9,10 +9,9 @@ test('make recipe card', assert => {
     //arrange
     const expected = /*html*/`
         <li>
-            <p><a href="https://www.bbcgoodfood.com/recipes/13139/onepan-chicken-couscous" target="_blank">Chicken Couscous</a></p>
-            <img src="https://www.themealdb.com/images/media/meals/qxytrx1511304021.jpg" alt="image of Chicken Couscous">
-            <p>Cuisine: Moroccan</p>
-            <p><a href="https://www.youtube.com/watch?v=GZQGy9oscVk" target="_blank">Video</a></p>
+            <p><a href="http://food2fork.com/view/8c0314" target="_blank">Chicken and cashew nut stir-fry</a></p>
+            <img src="http://static.food2fork.com/chickenandcashewnuts_89299_16x9986b.jpg" alt="image of Chicken and cashew nut stir-fry">
+            <p><a href="http://www.bbc.co.uk/food" target="_blank">BBC Food</a></p>
         </li>
     `;
     //act

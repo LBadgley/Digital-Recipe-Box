@@ -11,10 +11,9 @@ export default function renderMealCards(meals) {
 export function makeRecipeCard(meal) {
     const html = /*html*/`
         <li>
-            <p><a href=${meal.strSource} target="_blank">${meal.strMeal}</a></p>
-            <img src=${meal.strMealThumb} alt="image of ${meal.strMeal}">
-            <p>Cuisine: ${meal.strArea}</p>
-            <p><a href=${meal.strYoutube} target="_blank">Video</a></p>
+            <p><a href=${meal.f2f_url} target="_blank">${meal.title}</a></p>
+            <img src=${meal.image_url} alt="image of ${meal.title}">
+            <p><a href=${meal.publisher_url} target="_blank">${meal.publisher}</a></p>
         </li>
     `;   
     const template = document.createElement('template');
