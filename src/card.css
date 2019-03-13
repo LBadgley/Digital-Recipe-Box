@@ -28,6 +28,7 @@ li img {
     width: 100%;
     align-self: center;
     border: solid black 1px;
+    margin: 10px 0px 10px 0px;
 }
 
 li a {
