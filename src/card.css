@@ -1,0 +1,32 @@
+ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+}
+
+li {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 40%;
+    min-width: 100px;
+    max-width: 300px;
+    border: 3px solid black;
+    margin: .5em;
+    background: rgb(43, 74, 94);
+    padding: 15px;
+}
+
+li p {
+    font-size: 1.5em;
+    color: blanchedalmond;
+}
+
+li img {
+    width: 100%;
+    align-self: center;
+    border: solid black 1px;
+}
+
