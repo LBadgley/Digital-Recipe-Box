@@ -17,5 +17,3 @@ Pick an API that:
 3. Supports paging
 
 You will likely need to sign up for an API key.
-
-
