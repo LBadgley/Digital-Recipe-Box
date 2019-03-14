@@ -1,6 +1,8 @@
 import meals from '../data/meals.js';
 import renderMealCards from './meal-card-components.js';
 import './search-component.js';
+import './paging-component.js';
+
 // loadSearch();
 renderMealCards(meals);
 

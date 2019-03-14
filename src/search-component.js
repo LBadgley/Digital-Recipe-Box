@@ -1,15 +1,5 @@
 import { writeSearchToQuery } from './hash-query.js';
-const searchForm = document.getElementById('search-form');
-
-// export default function loadSearch() {
-    //         const formData = new FormData(searchForm);
-    //         const mainIngredient = formData.get('main-ingredient');
-    //         console.log('click', mainIngredient);
-    //     });
-    
-    
-    // }
-    
+const searchForm = document.getElementById('search-form');  
 
 searchForm.addEventListener('submit', event => {
     event.preventDefault();
@@ -18,5 +8,5 @@ searchForm.addEventListener('submit', event => {
     const existingQuery = window.location.hash.slice(1);
     const newQuery = writeSearchToQuery(existingQuery, mainIngredient);
     window.location.hash = newQuery;
+    // console.log('newQuery', newQuery);
 });
-
