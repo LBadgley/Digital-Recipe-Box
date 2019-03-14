@@ -4,6 +4,7 @@ import { updateMainIngredient } from './search-component.js';
 import './search-component.js';
 import './paging-component.js';
 import { readFromQuery } from './hash-query.js';
+import makeSearchMealUrl from './make-search-meal-url.js'
 
 renderMealCards(meals);
 
