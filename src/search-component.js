@@ -1,6 +1,6 @@
 const searchForm = document.getElementById('search-form');
 
-export default function loadFilter() {
+export default function loadSearch() {
     searchForm.addEventListener('submit', event => {
         event.preventDefault();
         const formData = new FormData(searchForm);

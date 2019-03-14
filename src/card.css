@@ -22,13 +22,15 @@ li {
 li p {
     font-size: 1.5em;
     color: blanchedalmond;
+    text-align: center;
 }
 
 li img {
     width: 100%;
     align-self: center;
-    border: solid black 1px;
-    margin: 10px 0px 10px 0px;
+    border-style: outset;
+    border-color: #716A5C;
+    margin: 10%;
 }
 
 li a {
