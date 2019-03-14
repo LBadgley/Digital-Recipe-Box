@@ -9,6 +9,12 @@ function writeSearchToQuery(existingQuery, q) {
     return searchParams.toString();
 }
 
+function writePageToQuery(existingQuery, page) {
+    const searchParams = new URLSearchParams(existingQuery);
+    searchParams.set('q', 'beef');
+    searchParams.set('page', page);
+    return searchParams.toString();
+}
 test('add search to empty query', assert => {
     // arrange
     const expected = 'q=chicken+breast&page=1';
@@ -31,6 +37,19 @@ test('add search to existing query', assert => {
 
     // act
     const result = writeSearchToQuery(existingQuery, q);
+
+    // assert
+    assert.equal(result, expected);
+});
+
+test('add page to query', assert => {
+    // arrange
+    const expected = 'q=beef&page=2';
+    const existingQuery = 'q=beef&page=1';
+    const page = 2;
+
+    // act
+    const result = writePageToQuery(existingQuery, page);
 
     // assert
     assert.equal(result, expected);
