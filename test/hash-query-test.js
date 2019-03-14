@@ -23,5 +23,15 @@ test('add search to empty query', assert => {
     assert.equal(result, expected);
 });
 
-    
+test('add search to existing query', assert => {
+    // arrange
+    const expected = 'q=beef&page=1';
+    const existingQuery = 'q=chicken+breast&page=1';
+    const q = 'beef';
 
+    // act
+    const result = writeSearchToQuery(existingQuery, q);
+
+    // assert
+    assert.equal(result, expected);
+});
