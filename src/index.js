@@ -12,6 +12,7 @@ window.addEventListener('hashchange', () => {
     const queryOptions = readFromQuery(existingQuery);
     updateMainIngredient(queryOptions.q);
     const url = makeSearchMealUrl(queryOptions);
+    console.log(url);
     // fetch(url)
     //     .then(response => response.json())
     //     .then(result => result.recipes)
