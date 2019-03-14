@@ -10,6 +10,34 @@ body {
 h1 {
     font-size: 3em;
     text-align: center;
-
+    display: inline-block;
 }
 
+.header-image {
+    width: 250px;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+#header-style {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(90, 141, 170);
+}
+.profile {
+    border: solid 1px black;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgb(166, 170, 84);
+}
+
+#search-bar {
+    text-align: center;
+    padding: 10px;
+}
+
+#page-buttons {
+    text-align: center;
+}

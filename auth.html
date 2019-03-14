@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-auth.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <link rel="stylesheet" href="./src/main.css">
+    <link rel="stylesheet" href="./src/auth/auth.css">
+
+    <title>~*~Favorite Recipes~*~</title>
+</head>
+<body>
+    <div id="header-container"></div>
+    <main>
+        <p>Sign in to check out your recipe box!</p>
+        <div id="firebaseui-auth-container"></div>
+    </main>
+
+<script type="module" src="src/auth/auth.js"></script>
+</body>
+</html>
