@@ -15,16 +15,23 @@ function writePageToQuery(existingQuery, page) {
     searchParams.set('page', page);
     return searchParams.toString();
 }
+
+function readFromQuery(query) {
+    const searchParams = new URLSearchParams(query);
+    const queryOptions = {
+        q: searchParams.get('q'),
+        page: Number(searchParams.get('page'))
+    };
+    return queryOptions;
+}
+
 test('add search to empty query', assert => {
     // arrange
     const expected = 'q=chicken+breast&page=1';
-
     const existingQuery = '';
     const q = 'chicken breast';
-
     // act
     const result = writeSearchToQuery(existingQuery, q);
-    
     // assert
     assert.equal(result, expected);
 });
@@ -53,4 +60,17 @@ test('add page to query', assert => {
 
     // assert
     assert.equal(result, expected);
+});
+
+test('read options from query', assert => {
+    //arrange
+    const query = 'q=beef&page=2';
+    const expected = {
+        q: 'beef',
+        page: 2
+    };
+    //act
+    const result = readFromQuery(query);
+    //assert
+    assert.deepEqual(result, expected);
 });
