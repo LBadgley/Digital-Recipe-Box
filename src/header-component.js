@@ -14,8 +14,8 @@ export function makeHeader() {
 }
 
 export function makeProfile() {
-    // const avatar = user.photoURL || './assets/recipe-box.jpg';
-    const html = /*html*/`
+    const avatar = user.photoURL || './assets/recipe-box.jpg';
+    return /*html*/`
         <div class="profile">
             <img src="./assets/recipe-box.jpg">
             <span id="user-name">user name:</span>

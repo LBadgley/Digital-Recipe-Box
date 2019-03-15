@@ -3,8 +3,6 @@ import { makeProfile, makeHeader } from '../src/header-component.js';
 const test = QUnit.test;
 QUnit.module('header tests');
 
-
-
 test('make header', assert => {
     const dom = makeHeader();
 
@@ -17,11 +15,6 @@ test('make header', assert => {
 });
 
 test('make profile', assert => {
-    // const user = {
-    //     displayName: 'Mee Mee',
-    //     photoURL: './assets/recipe-box.jpg' 
-    // };
-
     const expected = /*html*/`
         <div class="profile">
             <img src="./assets/recipe-box.jpg">
