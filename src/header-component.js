@@ -1,12 +1,12 @@
-import { auth } from './firebase';
+import { auth } from './firebase.js';
 
 
 export function makeHeader() {
     const html = /*html*/`
-    <section id="header-style">
-    <img src='./assets/recipe-box.jpg' class="header-image">
-    <h1>RecipeBox</h1>
-    </section>
+        <section id="header-style">
+            <img src='./assets/recipe-box.jpg' class="header-image">
+            <h1>RecipeBox</h1>
+        </section>
     `;
     const template = document.createElement('template');
     template.innerHTML = html;
@@ -15,18 +15,17 @@ export function makeHeader() {
 
 export function makeProfile() {
     // const avatar = user.photoURL || './assets/recipe-box.jpg';
-    return /*html*/`
-    <div class="profile">
-    <img src="./assets/recipe-box.jpg">
-    <span id="user-name">user name:</span>
-    <button>Sign out!</button>
-    </div>
+    const html = /*html*/`
+        <div class="profile">
+            <img src="./assets/recipe-box.jpg">
+            <span id="user-name">user name:</span>
+            <button>Sign out!</button>
+        </div>
     `;
 }
+const headerContainer = document.getElementById('header-container');
 
 export default function loadHeader() {
-    const headerContainer = document.getElementById('header-container');
-
     const dom = makeHeader();
     headerContainer.appendChild(dom);
 

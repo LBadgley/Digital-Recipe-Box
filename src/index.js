@@ -1,14 +1,14 @@
 // import meals from '../data/meals.js';
-import './check-auth.js';
-import { auth } from './firebase.js';
-
-import loadHeader from './header-component.js';
 import renderMealCards from './meal-card-components.js';
 import { updateMainIngredient } from './search-component.js';
-import './search-component.js';
-import { updatePagingInfo } from './paging-component.js';
-import { readFromQuery } from './hash-query.js';
 import makeSearchMealUrl from './make-search-meal-url.js';
+import { readFromQuery } from './hash-query.js';
+import { updatePagingInfo } from './paging-component.js';
+import loadHeader from './header-component.js';
+import  { auth } from './firebase.js';
+// import './check-auth.js';
+
+// import './search-component.js';
 
 
 loadHeader();

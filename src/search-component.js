@@ -1,4 +1,5 @@
 import { writeSearchToQuery } from './hash-query.js';
+
 const searchForm = document.getElementById('search-form');  
 const mainIngredientNode = document.getElementById('main-ingredient');
 
