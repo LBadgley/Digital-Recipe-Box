@@ -1,5 +1,4 @@
 import { makeProfile, makeHeader } from '../src/header-component.js';
-import { auth } from '../src/firebase.js';
 import user from '../data/user.js';
 
 const test = QUnit.test;
