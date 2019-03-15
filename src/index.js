@@ -7,23 +7,24 @@ import { updatePagingInfo } from './paging-component.js';
 import { auth } from './firebase.js';
 import './check-auth.js';
 
-auth.onAuthStateChanged(user => {
+loadHeader();
+// auth.onAuthStateChanged(user => {
     
-    // if(!user) {
-    //     window.location = 'auth.html';
-    //     return;
-    // } else {
-    //     loadHeader(user);
-    // }
-});
+//     if(!user) {
+//         window.location = 'auth.html';
+//         return;
+//     } else {
+//         loadHeader(user);
+//     }
+// });
 
-function loadQuery() {
-    const query = window.location.hash.slice(1);
-    const queryOptions = readFromQuery(query);
-    updateMainIngredient(queryOptions.q);
+// function loadQuery() {
+//     const query = window.location.hash.slice(1);
+//     const queryOptions = readFromQuery(query);
+//     updateMainIngredient(queryOptions.q);
 
-    const url = makeSearchMealUrl(queryOptions)
-}
+//     const url = makeSearchMealUrl(queryOptions);
+// }
 
 window.addEventListener('hashchange', () => {
     const existingQuery = window.location.hash.slice(1);
@@ -32,7 +33,7 @@ window.addEventListener('hashchange', () => {
     const url = makeSearchMealUrl(queryOptions);
     const searchParams = new URLSearchParams(url);
     const currentPage = Number(searchParams.get('page'));
-    // fetch(url)
+    fetch(url)
         .then(response => response.json())
         .then(result => {
             renderMealCards(result.recipes);
