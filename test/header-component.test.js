@@ -14,17 +14,17 @@ test('make header', assert => {
     `);
 });
 
-test('make profile', assert => {
-    const expected = /*html*/`
-        <div class="profile">
-            <img src="./assets/recipe-box.jpg">
-            <span id="user-name">user name:</span>
-            <button>Sign out!</button>
-        </div>
-    `;
+// test('make profile', assert => {
+//     const expected = /*html*/`
+//         <div class="profile">
+//             <img src="./assets/recipe-box.jpg">
+//             <span id="user-name">user name:</span>
+//             <button>Sign out!</button>
+//         </div>
+//     `;
 
-    const result = makeProfile();
+//     const result = makeProfile();
     
 
-    assert.equal(result, expected);
-});
+//     assert.equal(result, expected);
+// });

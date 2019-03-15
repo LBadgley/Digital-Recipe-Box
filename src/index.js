@@ -20,7 +20,7 @@ window.addEventListener('hashchange', () => {
     const url = makeSearchMealUrl(queryOptions);
     const searchParams = new URLSearchParams(url);
     const currentPage = Number(searchParams.get('page'));
-    // fetch(url)
+    fetch(url)
         .then(response => response.json())
         .then(result => {
             renderMealCards(result.recipes);
