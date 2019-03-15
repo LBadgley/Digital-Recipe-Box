@@ -13,31 +13,43 @@ export function makeHeader() {
     return template.content;
 }
 
-export function makeProfile() {
-    // const avatar = user.photoURL || './assets/recipe-box.jpg';
-    return /*html*/`
+export function makeProfile(user) {
+    const avatar = user.photoURL || './assets/recipe-box.jpg';
+    const html = /*html*/`
         <div class="profile">
-            <img src="./assets/recipe-box.jpg">
-            <span id="user-name">user name:</span>
+            <img src="${avatar}">
+            <span id="user-name">${user.displayName}</span>
             <button>Sign out!</button>
         </div>
     `;
+
+    const template = document.createElement('template');
+    template.innerHTML = html;
+    return template.content;
 }
 const headerContainer = document.getElementById('header-container');
 
 export default function loadHeader() {
     const dom = makeHeader();
+    const header = dom.querySelector('section');
     headerContainer.appendChild(dom);
 
     auth.onAuthStateChanged(user => {
         if(user) {
-            const userNameDisplay = document.getElementById('user-name');
-            userNameDisplay.textContent = user.displayName;
-            const profileDisplay = document.getElementById('user-profile');
-            profileDisplay.src = user.photoURL;
-        }
-        else {
+            const userDom = makeProfile(user);
+            const signOutButton = userDom.querySelector('button');
+            signOutButton.addEventListener('click', () => {
+                auth.signOut();
+                window.location.hash = '';
+            });
+            header.appendChild(userDom);
+        } else {
             //no user
+            window.location = './auth.html' + window.location.hash;
         }
     });
+}
+export function updateUser(user) {
+    const userName = document.getElementById('user-name');
+    userName.textContent = user.displayName;
 }

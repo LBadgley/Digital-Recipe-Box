@@ -1,17 +1,20 @@
-// import meals from '../data/meals.js';
-import renderMealCards from './meal-card-components.js';
+import loadHeader, { updateUser } from './header-component.js';
 import { updateMainIngredient } from './search-component.js';
+import renderMealCards from './meal-card-components.js';
 import makeSearchMealUrl from './make-search-meal-url.js';
 import { readFromQuery } from './hash-query.js';
 import { updatePagingInfo } from './paging-component.js';
-import loadHeader from './header-component.js';
-// import  { auth } from '../firebase.js';
+import { auth } from './firebase.js';
 import './check-auth.js';
 
-// import './search-component.js';
+auth.onAuthStateChanged(user => {
+    if(!user) {
+        window.location = 'auth.html';
+        return;
+    }
+    loadHeader(user);
+});
 
-
-loadHeader();
 
 window.addEventListener('hashchange', () => {
     const existingQuery = window.location.hash.slice(1);
@@ -24,10 +27,6 @@ window.addEventListener('hashchange', () => {
         .then(response => response.json())
         .then(result => {
             renderMealCards(result.recipes);
-            // const pagingInfo = {
-            //     currentPage: result.page,
-            //     totalPages: result.total_pages
-            // }; 
             updatePagingInfo(currentPage);
         });
 });

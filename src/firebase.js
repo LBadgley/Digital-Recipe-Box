@@ -10,9 +10,12 @@ firebase.initializeApp(config);
 
 export const auth = firebase.auth();
 
-// const db = firebase.database();
+const db = firebase.database();
 
-// export const usersRef = db.ref('users');
+export const usersRef = db.ref('users');
 
-// export const favoritesByUserRef = db.ref('favorites-by-user');
+export const favoritesByUserRef = db.ref('favorites-by-user');
 
+// firebase issue showing up in QUnit tests-- but throwing a weird error involving makeHeader() fn
+// firebase user login was showing up and has since stopped 
+// firebase not rendering in header.. still

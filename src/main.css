@@ -33,6 +33,11 @@ h1 {
     background-color: rgb(166, 170, 84);
 }
 
+.profile img {
+    width: 50px;
+    border-radius: 100%;
+}
+
 #search-bar {
     text-align: center;
     padding: 10px;
