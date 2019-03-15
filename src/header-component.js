@@ -1,13 +1,13 @@
-const headerContainer = document.getElementById('header-container');
+import { auth } from './firebase';
 
 
 export function makeHeader() {
     const html = /*html*/`
-     <section id="header-style">
-        <img src='./assets/recipe-box.jpg' class="header-image">
-         <h1>RecipeBox</h1>
+    <section id="header-style">
+    <img src='./assets/recipe-box.jpg' class="header-image">
+    <h1>RecipeBox</h1>
     </section>
-`;
+    `;
     const template = document.createElement('template');
     template.innerHTML = html;
     return template.content;
@@ -16,15 +16,29 @@ export function makeHeader() {
 export function makeProfile() {
     // const avatar = user.photoURL || './assets/recipe-box.jpg';
     return /*html*/`
-        <div class="profile">
-            <img src="./assets/recipe-box.jpg">
-            <span id="user-name">user name:</span>
-            <button>Sign out!</button>
-        </div>
+    <div class="profile">
+    <img src="./assets/recipe-box.jpg">
+    <span id="user-name">user name:</span>
+    <button>Sign out!</button>
+    </div>
     `;
 }
 
 export default function loadHeader() {
+    const headerContainer = document.getElementById('header-container');
+
     const dom = makeHeader();
     headerContainer.appendChild(dom);
+
+    auth.onAuthStateChanged(user => {
+        if(user) {
+            const userNameDisplay = document.getElementById('user-name');
+            userNameDisplay.textContent = user.displayName;
+            const profileDisplay = document.getElementById('user-profile');
+            profileDisplay.src = user.photoURL;
+        }
+        else {
+            //no user
+        }
+    });
 }
