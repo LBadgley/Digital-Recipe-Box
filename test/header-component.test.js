@@ -30,3 +30,4 @@ test('make profile', assert => {
 
     assert.htmlEqual(result, expected);
 });
+
