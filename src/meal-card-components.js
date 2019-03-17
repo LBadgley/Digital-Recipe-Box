@@ -23,17 +23,47 @@ export default function renderMealCards(meals) {
         const dom = makeRecipeCard(meal);
         recipeBox.appendChild(dom);
         const favoriteStar = dom.querySelector('.favorite-star');
-        favoriteStar.addEventListener('click', () => {
-            const userId = auth.currentUser.uid;
-            const userFavoritesRef = favoritesByUserRef.child(userId);
-            const userFavoriteRecipeRef = userFavoritesRef.child(meal.count);
-            userFavoriteRecipeRef.set({
-                id: meal.count,
-                title: meal.title,
-                image: meal.image_url,
-                publisher: meal.publisher_url
+
+        const userId = auth.currentUser.uid;
+        const userFavoritesRef = favoritesByUserRef.child(userId);
+        const userFavoriteRecipeRef = userFavoritesRef.child(meal.count);
+        userFavoriteRecipeRef.once('value')
+            .then(snapshot => {
+                const value = snapshot.val();
+                let isFavorite = false;
+                if(value) {
+                    addFavorite();
+                }
+                else {
+                    removeFavorite();
+                }
+
+                function addFavorite() {
+                    isFavorite = true;
+                    favoriteStar.textContent = '★';
+                    favoriteStar.classList.add('favorite');
+                }
+                function removeFavorite() {
+                    isFavorite = false;
+                    favoriteStar.textContent = '☆';
+                    favoriteStar.classList.remove('favorite');
+                }
+                favoriteStar.addEventListener('click', () => {
+                    if(isFavorite) {
+                        userFavoriteRecipeRef.remove();
+                        removeFavorite();
+                    }
+                    else {
+                        userFavoritesRef.set({
+                            id: meal.count,
+                            title: meal.title,
+                            image: meal.image_url,
+                            publisher: meal.publisher_url
+                        });
+                        addFavorite();
+                    }
+                });
             });
-        });
         recipeBox.appendChild(dom);
     });
 }

@@ -7,7 +7,7 @@ ul {
 
 li {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
     width: 40%;
@@ -18,7 +18,9 @@ li {
     background: rgb(43, 74, 94);
     padding: 15px;
 }
-
+.favorite-star {
+    color: goldenrod;
+}
 li p {
     font-size: 1.5em;
     color: blanchedalmond;

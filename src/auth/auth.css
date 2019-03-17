@@ -3,3 +3,8 @@ p {
     margin-bottom: 30px;
 }
 
+#main-signin {
+    border: solid rgba(70, 131, 180, 0.418) 3px;
+    padding: 20px;
+    margin: 20px;
+}
