@@ -1,4 +1,4 @@
-import { makeProfile, makeHeader } from '../src/header-component.js';
+import { makeProfile, makeHeader, updateUser } from '../src/header-component.js';
 import user from '../data/user.js';
 
 const test = QUnit.test;
@@ -31,3 +31,21 @@ test('make profile', assert => {
     assert.htmlEqual(result, expected);
 });
 
+test('make profile with no avatar', assert => {
+    // arrange
+    const user = { 
+        displayName: 'Laura Badgley',
+        photoURL: null
+    };
+    const expected = /*html*/ `
+        <div class="profile">
+            <img src="./assets/recipe-box.jpg">
+            <span id="user-name">${user.displayName}</span>
+            <button>Sign out!</button>
+        </div>
+        `;
+    // act
+    const result = makeProfile(user);
+    // assert
+    assert.htmlEqual(result, expected);
+});
