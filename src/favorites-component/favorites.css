@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #D0D38F;
+}
+
+h2 {
+    font-size: 3em;
+    text-align: center;
+    display: inline-block;
+}

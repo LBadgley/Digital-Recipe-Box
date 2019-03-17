@@ -8,6 +8,7 @@ export function makeRecipeCard(meal) {
             <a href=${meal.f2f_url} target="_blank">${meal.title}</a>
             <img src=${meal.image_url} alt="image of ${meal.title}">
             <a href=${meal.publisher_url} target="_blank">${meal.publisher}</a>
+            <span id="recipe-id">${meal.recipe_id}</span>
         </li>
     `;   
     const template = document.createElement('template');
@@ -26,7 +27,7 @@ export default function renderMealCards(meals) {
 
         const userId = auth.currentUser.uid;
         const userFavoritesRef = favoritesByUserRef.child(userId);
-        const userFavoriteRecipeRef = userFavoritesRef.child(meal.count);
+        const userFavoriteRecipeRef = userFavoritesRef.child(meal.recipe_id);
         userFavoriteRecipeRef.once('value')
             .then(snapshot => {
                 const value = snapshot.val();
@@ -55,7 +56,7 @@ export default function renderMealCards(meals) {
                     }
                     else {
                         userFavoritesRef.set({
-                            id: meal.count,
+                            id: meal.recipe_id,
                             title: meal.title,
                             image: meal.image_url,
                             publisher: meal.publisher_url

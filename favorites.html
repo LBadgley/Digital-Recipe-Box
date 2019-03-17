@@ -9,7 +9,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-database.js"></script>
 
-    <link rel="stylesheet" href="src/favorites.css">
+    <link rel="stylesheet" href="src/favorites-component/favorites.css">
     <link rel="stylesheet" href="src/header.css">
 </head>
 <body>
@@ -18,7 +18,11 @@
     <main>
         <a href="./index.html">Go back to search more recipes</a>
         <h2>Your favorite recipes</h2>
-        <ul id="recipe-list"></ul>
+        <ul id="recipe-list">
+            <li></li>
+        </ul>
     </main>
+
+    <script type="module" src="src/favorites-component/favorites.js"></script>
 </body>
 </html>
