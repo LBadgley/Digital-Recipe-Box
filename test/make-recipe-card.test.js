@@ -1,5 +1,4 @@
 import meal from '../data/meal.js';
-
 import { makeRecipeCard } from '../src/meal-card-components.js';
 
 const test = QUnit.test;

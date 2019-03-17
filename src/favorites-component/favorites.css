@@ -12,3 +12,34 @@ h2 {
     text-align: center;
     display: inline-block;
 }
+
+.header-image {
+    width: 250px;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin: 20px;
+}
+#header-style {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(137, 162, 177);
+    border-bottom: solid gray 3px;
+}
+.profile {
+    border: solid 1px black;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgb(203, 206, 155);
+}
+
+.profile img {
+    width: 75px;
+    border-radius: 20%;
+}
+
+#search-bar {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
