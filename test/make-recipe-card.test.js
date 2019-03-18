@@ -10,7 +10,7 @@ test('make recipe card', assert => {
         <li>
             <span class="favorite-star">☆</span>
             <a href="http://food2fork.com/view/8c0314" target="_blank">Chicken and cashew nut stir-fry</a>
-            <img src="${meal.image}" alt="image of Chicken and cashew nut stir-fry">
+            <img src="${meal.image_url}" alt="image of Chicken and cashew nut stir-fry">
             <a href="http://www.bbc.co.uk/food" target="_blank">BBC Food</a>
             <span id="recipe-id">${meal.id}</span>
         </li>
