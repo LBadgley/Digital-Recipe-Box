@@ -6,9 +6,9 @@ export function makeRecipeCard(meal) {
         <li>
             <span class="favorite-star">☆</span>
             <a href=${meal.f2f_url} target="_blank">${meal.title}</a>
-            <img src=${meal.image_url} alt="image of ${meal.title}">
+            <img src=${meal.image} alt="image of ${meal.title}">
             <a href=${meal.publisher_url} target="_blank">${meal.publisher}</a>
-            <span id="recipe-id">${meal.recipe_id}</span>
+            <span id="recipe-id">${meal.id}</span>
         </li>
     `;   
     const template = document.createElement('template');
@@ -27,7 +27,7 @@ export default function updateRecipes(meals) {
 
         const userId = auth.currentUser.uid;
         const userFavoritesRef = favoritesByUserRef.child(userId);
-        const userFavoriteRecipeRef = userFavoritesRef.child(meal.recipe_id);
+        const userFavoriteRecipeRef = userFavoritesRef.child(meal.id);
         userFavoriteRecipeRef.once('value')
             .then(snapshot => {
                 const value = snapshot.val();
