@@ -7,7 +7,6 @@ import { updatePagingInfo } from './paging-component.js';
 import { auth } from './firebase.js';
 import renderMealCards from '../src/meal-card-components.js';
 import './check-auth.js';
-// import meals from '../data/meal.js';
 
 loadHeader();
 
