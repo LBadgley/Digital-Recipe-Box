@@ -7,7 +7,7 @@ import { updatePagingInfo } from './paging-component.js';
 import { auth } from './firebase.js';
 import renderMealCards from '../src/meal-card-components.js';
 import './check-auth.js';
-import meal from '../data/meal.js';
+// import meals from '../data/meal.js';
 
 loadHeader();
 
@@ -38,8 +38,13 @@ function loadQuery() {
     fetch(url)
         .then(response => response.json())
         .then(result => {
-            updateRecipes(result.recipes);
-            updatePagingInfo(currentPage);
+            try {
+                updateRecipes(result.recipes);
+                updatePagingInfo(currentPage);
+            } catch(error) {
+                console.error(error);
+                console.error(result.error);
+            }
         }); 
 }
 

@@ -1,14 +1,13 @@
 import { auth, favoritesByUserRef } from '../src/firebase.js';
 
-
 export function makeRecipeCard(meal) {
     const html = /*html*/`
         <li>
             <span class="favorite-star">☆</span>
             <a href=${meal.f2f_url} target="_blank">${meal.title}</a>
-            <img src=${meal.image} alt="image of ${meal.title}">
+            <img src=${meal.image_url} alt="image of ${meal.title}">
             <a href=${meal.publisher_url} target="_blank">${meal.publisher}</a>
-            <span id="recipe-id">${meal.id}</span>
+            <span id="recipe-id">${meal.recipe_id}</span>
         </li>
     `;   
     const template = document.createElement('template');
@@ -21,13 +20,14 @@ const recipeBox = document.getElementById('recipe-box');
 
 export default function updateRecipes(meals) {
     clearCards();
+
     meals.forEach(meal => {
         const dom = makeRecipeCard(meal);
         const favoriteStar = dom.querySelector('.favorite-star');
 
         const userId = auth.currentUser.uid;
         const userFavoritesRef = favoritesByUserRef.child(userId);
-        const userFavoriteRecipeRef = userFavoritesRef.child(meal.id);
+        const userFavoriteRecipeRef = userFavoritesRef.child(meal.recipe_id);
         userFavoriteRecipeRef.once('value')
             .then(snapshot => {
                 const value = snapshot.val();
@@ -56,10 +56,11 @@ export default function updateRecipes(meals) {
                     }
                     else {
                         userFavoriteRecipeRef.set({
-                            id: meal.recipe_id,
+                            recipe_id: meal.recipe_id,
                             title: meal.title,
-                            image: meal.image_url,
-                            publisher: meal.publisher_url
+                            image_url: meal.image_url,
+                            publisher: meal.publisher,
+                            f2f_url: meal.f2f_url,
                         });
                         addFavorite();
                     }
