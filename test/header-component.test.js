@@ -27,7 +27,6 @@ test('make profile', assert => {
 
     const result = makeProfile(user);
     
-
     assert.htmlEqual(result, expected);
 });
 
