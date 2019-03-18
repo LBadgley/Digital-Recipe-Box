@@ -18,11 +18,11 @@ export function makeRecipeCard(meal) {
 
 const recipeBox = document.getElementById('recipe-box');
 
-export default function renderMealCards(meals) {
+
+export default function updateRecipes(meals) {
     clearCards();
     meals.forEach(meal => {
         const dom = makeRecipeCard(meal);
-        recipeBox.appendChild(dom);
         const favoriteStar = dom.querySelector('.favorite-star');
 
         const userId = auth.currentUser.uid;
@@ -55,7 +55,7 @@ export default function renderMealCards(meals) {
                         removeFavorite();
                     }
                     else {
-                        userFavoritesRef.set({
+                        userFavoriteRecipeRef.set({
                             id: meal.recipe_id,
                             title: meal.title,
                             image: meal.image_url,
