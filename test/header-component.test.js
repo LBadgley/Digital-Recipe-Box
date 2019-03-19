@@ -31,7 +31,6 @@ test('make profile', assert => {
 });
 
 test('make profile with no avatar', assert => {
-    // arrange
     const user = { 
         displayName: 'Laura Badgley',
         photoURL: null
@@ -43,8 +42,8 @@ test('make profile with no avatar', assert => {
             <button>Sign out!</button>
         </div>
         `;
-    // act
+
     const result = makeProfile(user);
-    // assert
+
     assert.htmlEqual(result, expected);
 });

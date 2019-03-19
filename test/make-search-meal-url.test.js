@@ -9,22 +9,19 @@ test('include query and page', assert => {
         page: 1
     };
 
-    // act
     const result = makeSearchMealUrl(queryOptions);
 
-    // assert
     assert.equal(result, expected);
 });
 
 test('return empty string if no search term', assert => {
-    // arrange
     const expected = '';
     const queryOptions = {
         q: '',
         page: 3
     };
-    // act
+
     const result = makeSearchMealUrl(queryOptions);
-    // assert
+
     assert.equal(result, expected);
 });

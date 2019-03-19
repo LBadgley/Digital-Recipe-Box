@@ -16,8 +16,6 @@ export function makeRecipeCard(meal) {
 }
 
 const recipeBox = document.getElementById('recipe-box');
-
-
 export default function updateRecipes(meals) {
     clearCards();
 

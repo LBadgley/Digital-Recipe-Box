@@ -5,7 +5,6 @@ const test = QUnit.test;
 QUnit.module('recipe card template');
 
 test('make recipe card', assert => {
-    //arrange
     const expected = /*html*/`
         <li>
             <span class="favorite-star">☆</span>
@@ -15,9 +14,9 @@ test('make recipe card', assert => {
             <span id="recipe-id">${meal.recipe_id}</span>
         </li>
     `;
-    //act
+
     const result = makeRecipeCard(meal);
-    //assert
+
     assert.htmlEqual(result, expected);
 
 });

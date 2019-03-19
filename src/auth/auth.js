@@ -11,7 +11,7 @@ ui.start('#firebaseui-auth-container', {
         firebase.auth.EmailAuthProvider.PROVIDER_ID,
         firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     ],
-
+    
     signInSuccessUrl: './' + window.location.hash,
 
     credentialHelper: firebaseui.auth.CredentialHelper.NONE,

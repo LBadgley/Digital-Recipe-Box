@@ -7,7 +7,6 @@ import { updatePagingInfo } from './paging-component.js';
 import { auth } from './firebase.js';
 import renderMealCards from '../src/meal-card-components.js';
 import './check-auth.js';
-
 loadHeader();
 
 auth.onAuthStateChanged(() => {
@@ -16,7 +15,6 @@ auth.onAuthStateChanged(() => {
 
 const prompt = document.getElementById('prompt');
 const recipeBox = document.getElementById('recipe-box');
-
 function loadQuery() {
     const existingQuery = window.location.hash.slice(1);
     const queryOptions = readFromQuery(existingQuery);

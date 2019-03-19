@@ -27,8 +27,8 @@ export function makeProfile(user) {
     template.innerHTML = html;
     return template.content;
 }
-const headerContainer = document.getElementById('header-container');
 
+const headerContainer = document.getElementById('header-container');
 export default function loadHeader(options) {
     const dom = makeHeader();
     const header = dom.querySelector('section');
