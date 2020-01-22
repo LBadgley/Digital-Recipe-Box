@@ -1,9 +1,8 @@
 import { auth } from './firebase.js';
 
-
 export function makeHeader() {
     const html = /*html*/`
-        <section id="header-style">
+        <section id="header-container">
             <img src='./assets/recipe-box.jpg' class="header-image">
             <h1>RecipeBox</h1>
         </section>

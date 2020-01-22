@@ -19,7 +19,7 @@ h2 {
     border-radius: 20px;
     margin: 20px;
 }
-#header-style {
+#header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;

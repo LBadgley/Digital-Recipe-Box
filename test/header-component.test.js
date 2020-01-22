@@ -8,7 +8,7 @@ test('make header', assert => {
     const dom = makeHeader();
 
     assert.htmlEqual(dom, /*html*/`
-        <section id="header-style">
+        <section id="header-container">
             <img src="./assets/recipe-box.jpg" class="header-image">
             <h1>RecipeBox</h1>
         </section>
